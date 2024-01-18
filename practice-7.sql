@@ -3,7 +3,7 @@ SELECT listings.property_type, COUNT (reviews.comments), reviews.date_reviewed
 FROM reviews
 INNER JOIN listings ON listings.id = reviews.listing_id
 GROUP BY listings.property_type
-ORDER BY reviews.date_reviewed;
+ORDER BY MAX(reviews.date_reviewed);
 -- +-------------------------------------+----------+----------------------------+
 -- | Boat                                | 2        | 2021-06-19                 |
 -- | Entire bungalow                     | 424      | 2021-10-18                 |
